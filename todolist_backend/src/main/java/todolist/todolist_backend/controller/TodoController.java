@@ -45,7 +45,7 @@ public class TodoController {
         todoToUpdate.setTitle(todo.getTitle());
         todoToUpdate.setDescription(todo.getDescription());
         todoToUpdate.setDate(todo.getDate());
-        todoToUpdate.setCompleted(todo.isCompleted());
+        todoToUpdate.setCompleted(todo.getCompleted());
         return todoRepository.save(todoToUpdate);
     }
 

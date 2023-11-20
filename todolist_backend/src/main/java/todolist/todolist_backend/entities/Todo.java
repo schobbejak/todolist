@@ -2,29 +2,24 @@ package todolist.todolist_backend.entities;
 
 import java.util.Objects;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class Todo {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "title")
     private String title;
 
-    @Column(name="description")
     private String description;
 
-    @Column(name="date")
     private String date;
 
-    @Column(name="completed")
     private boolean completed;
 
     public Todo() {   
@@ -79,7 +74,7 @@ public class Todo {
      * 
      * @return the completed status
      */
-    public boolean isCompleted() {
+    public boolean getCompleted() {
         return completed;
     }
 
@@ -143,7 +138,7 @@ public class Todo {
             todo.getTitle().equals(this.getTitle()) &&
             todo.getDescription().equals(this.getDescription()) &&
             todo.getDate().equals(this.getDate()) &&
-            todo.isCompleted() == this.isCompleted();
+            todo.getCompleted() == this.getCompleted();
     }
 
     /**
@@ -153,7 +148,7 @@ public class Todo {
      */
     @Override
     public int hashCode() {
-        return Objects.hash(this.getId(), this.getTitle(), this.getDescription(), this.getDate(), this.isCompleted());
+        return Objects.hash(this.getId(), this.getTitle(), this.getDescription(), this.getDate(), this.getCompleted());
     }
 
     /**
@@ -163,7 +158,7 @@ public class Todo {
      */
     @Override
     public String toString() {
-        return "Todo: " + this.getId() + ", " + this.getTitle() + ", " + this.getDescription() + ", " + this.getDate() + ", " + this.isCompleted();
+        return "Todo: " + this.getId() + ", " + this.getTitle() + ", " + this.getDescription() + ", " + this.getDate() + ", " + this.getCompleted();
     }
 
 }
