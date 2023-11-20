@@ -1,9 +1,18 @@
+package todolist.todolist_backend;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import todolist.todolist_backend.Todo;
+import todolist.todolist_backend.TodoRepository;
+
+
 @RestController
 @RequestMapping("/api/todos")
 public class TodoController {
     
     @Autowired
-    private TodoRepository todoRepository;
+    private transient TodoRepository todoRepository;
 
     @GetMapping
     public List<Todo> getTodos() {
