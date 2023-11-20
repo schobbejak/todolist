@@ -1,4 +1,4 @@
-package todolist.todolist_backend;
+package todolist.todolist_backend.entities;
 
 import java.util.Objects;
 
