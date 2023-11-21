@@ -1,9 +1,6 @@
 <template>
     <div>
         <TodoListComponent />
-        <router-link to="/create">
-            <button>NEW</button>
-        </router-link>
     </div>
 </template>
 
